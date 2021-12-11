@@ -1,0 +1,124 @@
+class BottomNavBarFb5 extends StatefulWidget {
+  const BottomNavBarFb5({Key? key}) : super(key: key);
+
+  @override
+  State<BottomNavBarFb5> createState() => _BottomNavBarFb5State();
+}
+
+class _BottomNavBarFb5State extends State<BottomNavBarFb5> {
+  int _selectedIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return BottomAppBar(
+      color: AppColors.primaryColor,
+      child: SizedBox(
+        height: 72.0,
+        width: MediaQuery.of(context).size.width,
+        child: Padding(
+          padding: const EdgeInsets.only(left: 26.0, right: 26.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              IconBottomBar(
+                  text: "Trang Chủ",
+                  icon: Icons.home,
+                  selected: _selectedIndex == 0,
+                  onPressed: () {
+                    setState(() {
+                      _selectedIndex = 0;
+                      print('Click');
+                      //selecCategory(context);
+                    });
+                  }),
+              IconBottomBar(
+                  text: "Đặt Lịch",
+                  icon: Icons.date_range_outlined,
+                  selected: _selectedIndex == 1,
+                  onPressed: () {
+                    setState(() {
+                      _selectedIndex = 1;
+                      print('Click1');
+                    });
+                  }),
+              IconBottomBar(
+                  text: "Đăng Tin",
+                  icon: Icons.post_add,
+                  selected: _selectedIndex == 2,
+                  onPressed: () {
+                    setState(() {
+                      _selectedIndex = 2;
+                      print('Click2');
+                    });
+                  }),
+              IconBottomBar(
+                  text: "Hotline",
+                  icon: Icons.phone,
+                  selected: _selectedIndex == 3,
+                  onPressed: () {
+                    _selectedIndex = 3;
+                    print('Click3');
+                  }),
+              IconBottomBar(
+                  text: "Tài Khoản",
+                  icon: Icons.account_circle_rounded,
+                  selected: _selectedIndex == 4,
+                  onPressed: () {
+                    _selectedIndex = 4;
+                    print('Click4');
+                  }),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+void selecCategory(BuildContext context) {
+  Navigator.of(context).push(
+    MaterialPageRoute(
+      builder: (_) {
+        return HomePage();
+      },
+    ),
+  );
+}
+
+class IconBottomBar extends StatelessWidget {
+  const IconBottomBar(
+      {Key? key,
+      required this.text,
+      required this.icon,
+      required this.selected,
+      required this.onPressed})
+      : super(key: key);
+  final String text;
+  final IconData icon;
+  final bool selected;
+  final Function() onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        IconButton(
+          onPressed: onPressed,
+          icon: Icon(icon,
+              size: 30,
+              color: selected ? AppColors.accentColor : Colors.white30),
+          //xử lý logic khi chọn và không chọn có lên màu hay không
+        ),
+        Text(
+          text,
+          style: TextStyle(
+              fontSize: 12,
+              height: .1,
+              color: selected ? AppColors.accentColor : Colors.white30),
+        )
+      ],
+    );
+  }
+}
