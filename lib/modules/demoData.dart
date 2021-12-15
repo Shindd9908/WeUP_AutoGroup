@@ -17,6 +17,59 @@ class DemoData {
     {"title": "Đăng kí lái thử", "image": "assets/images/mec.jpg"},
     {"title": "Vay lãi trả góp", "image": "assets/images/mec_red.jpg"},
   ];
+
+  static List<Map<String, String>> demoItemsCarSales = [
+    {
+      "nameCar" : "Porsche",
+      "destinationCar" : "Siêu phẩm Porsche Panamera model 2020 full options",
+      "pathImageCar" : "assets/images/porche.jpg",
+      "priceCar": "7 tỷ 999 triệu",
+      "starCar": "4.9",
+      "speedCar": "30.000 Km",
+      "locationCar": "Hà Nội",
+    },
+
+    {
+      "nameCar" : "Lamborghini",
+      "destinationCar" : "Siêu phẩm Lamborghini Urus model 2022 full options",
+      "pathImageCar" : "assets/images/lambor.jpg",
+      "priceCar": "17 tỷ 999 triệu",
+      "starCar": "4.9",
+      "speedCar": "10.000 Km",
+      "locationCar": "Hà Nội",
+    },
+
+    {
+      "nameCar" : "Porsche",
+      "destinationCar" : "Siêu phẩm Porsche Panamera model 2020 full options",
+      "pathImageCar" : "assets/images/porche.jpg",
+      "priceCar": "7 tỷ 999 triệu",
+      "starCar": "4.9",
+      "speedCar": "30.000 Km",
+      "locationCar": "Hà Nội",
+    },
+
+    {
+      "nameCar" : "Lamborghini",
+      "destinationCar" : "Siêu phẩm Lamborghini Urus model 2022 full options",
+      "pathImageCar" : "assets/images/lambor.jpg",
+      "priceCar": "17 tỷ 999 triệu",
+      "starCar": "4.9",
+      "speedCar": "10.000 Km",
+      "locationCar": "Hà Nội",
+    },
+
+    {
+      "nameCar" : "Porsche",
+      "destinationCar" : "Siêu phẩm Porsche Panamera model 2020 full options",
+      "pathImageCar" : "assets/images/porche.jpg",
+      "priceCar": "7 tỷ 999 triệu",
+      "starCar": "4.9",
+      "speedCar": "30.000 Km",
+      "locationCar": "Hà Nội",
+    }
+  ];
+
   static List<Map<String, String>> demoDiscount = [
     {
       "discountPercent": "10",
