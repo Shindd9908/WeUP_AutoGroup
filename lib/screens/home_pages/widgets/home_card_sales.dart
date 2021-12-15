@@ -1,6 +1,8 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:weup_autocar/screens/home_pages/components/sales/card_sale_car.dart';
 import 'package:weup_autocar/screens/home_pages/components/sales/sale_destination_catouse.dart';
+import 'package:weup_autocar/screens/home_pages/widgets/item_card_sales/items_car_sales.dart';
 
 class HomeCardSales extends StatelessWidget {
   const HomeCardSales({
@@ -9,6 +11,8 @@ class HomeCardSales extends StatelessWidget {
   }) : super(key: key);
 
   final List<Map<String, String>> demoDiscount;
+  static const routeNames = '/home-card-sales';
+
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +28,12 @@ class HomeCardSales extends StatelessWidget {
               ...List.generate(demoDiscount.length, (index) {
                 return InkWell(
                   // ignore: avoid_print
-                  onTap: () => print('Tap'),
+                  onTap: (){
+                    if (kDebugMode) {
+                      print('Tap');
+                    }
+                    Navigator.of(context).pushNamed(ItemsCardSales.routeName);
+                  },
                   child: CardSaleCar(
                       discountPercent: demoDiscount[index]["discountPercent"],
                       saleImageCar: demoDiscount[index]["pathImage"],

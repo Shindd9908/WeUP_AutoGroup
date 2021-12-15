@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:weup_autocar/modules/demoData.dart';
 import 'package:weup_autocar/screens/calendar/calendar_pages.dart';
 import 'package:weup_autocar/screens/home_pages/home_pages.dart';
+import 'package:weup_autocar/screens/home_pages/widgets/item_card_sales/items_car_sales.dart';
+import 'package:weup_autocar/screens/home_pages/widgets/item_support_buy/item_support_buycar.dart';
 import 'package:weup_autocar/screens/hot_line/hot_line_pages.dart';
 import 'package:weup_autocar/screens/new_post/new_post.dart';
 import 'package:weup_autocar/values/app_colors.dart';
 import 'screens/account/acount_pages.dart';
+import 'screens/home_pages/widgets/item_card_sales/items_car_sales.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,9 +19,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainPage(),
+      home: const MainPage(),
+      routes: {
+        ItemsCardSales.routeName: (ctx) =>ItemsCardSales(),
+        ItemSupportBuyCar.routeName: (ctx) =>const ItemSupportBuyCar(),
+      },
     );
   }
 }
